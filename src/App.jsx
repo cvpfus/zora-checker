@@ -57,7 +57,7 @@ function AirdropChecker() {
     address: CONTRACT_ADDRESS,
     abi: zoraAbi,
     functionName: "accountClaim",
-    args: [checkingAddress],
+    args: [checkingAddress.toLowerCase()],
     query: {
       refetchOnWindowFocus: false,
       refetchOnMount: false,
