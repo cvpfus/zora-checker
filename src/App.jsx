@@ -98,8 +98,9 @@ function AirdropChecker() {
               target="_blank"
             >
               contract
-            </a>
-            {" "} and it might be a fake contract. This site is just a tool to check an address using that contract.
+            </a>{" "}
+            and it might be a fake contract. This site is just a tool to check
+            an address using that contract.
           </p>
         </div>
         <div className="space-y-4">
@@ -170,6 +171,9 @@ function AirdropChecker() {
               <span className="text-yellow-200 text-sm block mb-1">
                 A decentralized tipping platform for streamers that offers
                 instant payouts and super low fees, all powered by blockchain.
+                EduStreamr is currently participating in the Open Campus
+                Incubator. We are looking for beta testers to try our platform
+                and give us feedback.
               </span>
               <span className="text-yellow-300 underline text-xs">
                 edustreamr.xyz
