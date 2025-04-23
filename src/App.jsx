@@ -154,7 +154,7 @@ function AirdropChecker() {
             </div>
           )}
 
-          <div className="w-full bg-yellow-100/10 border border-yellow-400 rounded-md p-4 my-4 flex flex-col items-center">
+          <div className="w-full bg-yellow-100/10 border border-yellow-400 rounded-md p-4 my-12 flex flex-col items-center">
             <span className="text-yellow-300 font-semibold text-base mb-1">
               Advertisement
             </span>
