@@ -203,62 +203,51 @@ function AirdropChecker() {
 
           {showAds && (
             <>
-              <div className="w-full bg-yellow-100/10 border border-yellow-400 rounded-md p-4 my-4 flex flex-col items-center">
-                <span className="text-yellow-300 font-semibold text-base mb-1">
-                  Ad #1
+              <a
+                href="https://edustreamr.xyz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-yellow-200/10 hover:bg-yellow-200/20 border border-yellow-400 rounded-md px-4 py-3 mt-2 transition-colors shadow-lg"
+              >
+                <span className="text-yellow-100 font-bold text-lg block mb-1">
+                  EduStreamr
                 </span>
-                <a
-                  href="https://edustreamr.xyz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center bg-yellow-200/10 hover:bg-yellow-200/20 border border-yellow-400 rounded-md px-4 py-3 mt-2 transition-colors shadow-lg"
-                >
-                  <span className="text-yellow-100 font-bold text-lg block mb-1">
-                    EduStreamr
-                  </span>
-                  <span className="text-yellow-200 text-sm block mb-1">
-                    <div>
-                      A decentralized tipping platform for streamers that offers
-                      instant payouts and super low fees, all powered by
-                      blockchain. Currently live on the{" "}
-                      <b>EDU Chain Testnet.</b>
-                    </div>
-                    <div>
-                      EduStreamr is currently participating in the{" "}
-                      <b>Open Campus Incubator</b>. We are looking for beta
-                      testers to try our platform and give us feedback.
-                    </div>
-                  </span>
-                  <span className="text-yellow-300 underline text-xs">
-                    edustreamr.xyz
-                  </span>
-                </a>
-              </div>
+                <span className="text-yellow-200 text-sm block mb-1">
+                  <div>
+                    A decentralized tipping platform for streamers that offers
+                    instant payouts and super low fees, all powered by
+                    blockchain. Currently live on the <b>EDU Chain Testnet.</b>
+                  </div>
+                  <div>
+                    EduStreamr is currently participating in the{" "}
+                    <b>Open Campus Incubator</b>. We are looking for beta
+                    testers to try our platform and give us feedback.
+                  </div>
+                </span>
+                <span className="text-yellow-300 underline text-xs">
+                  edustreamr.xyz
+                </span>
+              </a>
 
-              <div className="w-full bg-orange-100/10 border border-orange-400 rounded-md p-4 my-6 flex flex-col items-center">
-                <span className="text-orange-300 font-semibold text-base mb-1">
-                  Ad #2
+              <a
+                href="https://www.producthunt.com/products/edustreamr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-orange-200/10 hover:bg-orange-200/20 border border-orange-400 rounded-md px-4 py-3 mt-2 transition-colors shadow-lg"
+              >
+                <span className="text-orange-100 font-bold text-lg block mb-1">
+                  EduStreamr is launching soon on Product Hunt!
                 </span>
-                <a
-                  href="https://www.producthunt.com/products/edustreamr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center bg-orange-200/10 hover:bg-orange-200/20 border border-orange-400 rounded-md px-4 py-3 mt-2 transition-colors shadow-lg"
-                >
-                  <span className="text-orange-100 font-bold text-lg block mb-1">
-                    EduStreamr is launching soon on Product Hunt!
-                  </span>
-                  <span className="text-orange-200 text-sm block mb-1">
-                    <div>
-                      Support us by visiting our Product Hunt page and hitting
-                      the <b>Notify Me</b> button so you don't miss the launch!
-                    </div>
-                  </span>
-                  <span className="text-orange-300 underline text-xs">
-                    producthunt.com/products/edustreamr
-                  </span>
-                </a>
-              </div>
+                <span className="text-orange-200 text-sm block mb-1">
+                  <div>
+                    Support us by visiting our Product Hunt page and hitting the{" "}
+                    <b>Notify Me</b> button so you don't miss the launch!
+                  </div>
+                </span>
+                <span className="text-orange-300 underline text-xs">
+                  producthunt.com/products/edustreamr
+                </span>
+              </a>
             </>
           )}
 
