@@ -87,7 +87,8 @@ function AirdropChecker() {
             Zora Unofficial Airdrop Checker
           </h1>
           <p className="text-gray-400">
-            Check if you're eligible for the Zora token airdrop. No need to connect your wallet.
+            Check if you're eligible for the Zora token airdrop. No need to
+            connect your wallet.
           </p>
         </div>
         <div className="space-y-4">
@@ -141,6 +142,30 @@ function AirdropChecker() {
               </div>
             </div>
           )}
+
+          <div className="w-full bg-yellow-100/10 border border-yellow-400 rounded-md p-4 my-4 flex flex-col items-center">
+            <span className="text-yellow-300 font-semibold text-base mb-1">
+              Advertisement
+            </span>
+            <a
+              href="https://edustreamr.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center bg-yellow-200/10 hover:bg-yellow-200/20 border border-yellow-400 rounded-md px-4 py-3 mt-2 transition-colors shadow-lg"
+            >
+              <span className="text-yellow-100 font-bold text-lg block mb-1">
+                EduStreamr
+              </span>
+              <span className="text-yellow-200 text-sm block mb-1">
+                A decentralized tipping platform for streamers that offers
+                instant payouts and super low fees, all powered by blockchain.
+              </span>
+              <span className="text-yellow-300 underline text-xs">
+                edustreamr.xyz
+              </span>
+            </a>
+          </div>
+
           <footer className="w-full text-center mt-8 text-sm text-gray-500">
             <a
               href="https://x.com/cvpfus_id"
