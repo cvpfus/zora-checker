@@ -186,6 +186,31 @@ function AirdropChecker() {
             </a>
           </div>
 
+          <div className="w-full bg-orange-100/10 border border-orange-400 rounded-md p-4 my-6 flex flex-col items-center">
+            <span className="text-orange-300 font-semibold text-base mb-1">
+              Advertisement
+            </span>
+            <a
+              href="https://www.producthunt.com/products/edustreamr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center bg-orange-200/10 hover:bg-orange-200/20 border border-orange-400 rounded-md px-4 py-3 mt-2 transition-colors shadow-lg"
+            >
+              <span className="text-orange-100 font-bold text-lg block mb-1">
+                EduStreamr is launching soon on Product Hunt!
+              </span>
+              <span className="text-orange-200 text-sm block mb-1">
+                <div>
+                  Support us by visiting our Product Hunt page and hitting the{" "}
+                  <b>Notify Me</b> button so you don't miss the launch!
+                </div>
+              </span>
+              <span className="text-orange-300 underline text-xs">
+                producthunt.com/products/edustreamr
+              </span>
+            </a>
+          </div>
+
           <footer className="w-full text-center mt-8 text-sm text-gray-500">
             <a
               href="https://x.com/cvpfus_id"
