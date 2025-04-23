@@ -90,6 +90,17 @@ function AirdropChecker() {
             Check if you're eligible for the Zora token airdrop. No need to
             connect your wallet.
           </p>
+          <p className="text-gray-400">
+            Note: This checker is fetching the data from this{" "}
+            <a
+              href="https://basescan.org/address/0x0000000002ba96c69b95e32caab8fc38bab8b3f8"
+              className="underline cursor-pointer"
+              target="_blank"
+            >
+              contract
+            </a>
+            {" "} and it might be a fake contract. This site is just a tool to check an address using that contract.
+          </p>
         </div>
         <div className="space-y-4">
           <div className="space-y-2">
