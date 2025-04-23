@@ -156,12 +156,14 @@ function AirdropChecker() {
             </div>
           )}
 
-          <button
-            className="w-full my-12 bg-gray-700 hover:bg-gray-600 border border-gray-500 rounded-md px-4 py-2 text-sm font-medium mb-2 transition-colors"
-            onClick={() => setShowAds((prev) => !prev)}
-          >
-            {showAds ? "Hide Ads :(" : "Show Ads"}
-          </button>
+          <div className="flex justify-end mt-12">
+            <button
+              className="bg-gray-700 hover:bg-gray-600 border border-gray-500 rounded-md px-4 py-2 text-sm font-medium transition-colors"
+              onClick={() => setShowAds((prev) => !prev)}
+            >
+              {showAds ? "Hide Ads :(" : "Show Ads"}
+            </button>
+          </div>
 
           {showAds && (
             <>
