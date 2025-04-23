@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createConfig, http, useReadContract, WagmiProvider } from "wagmi";
+import { createConfig, http, useReadContracts, WagmiProvider } from "wagmi";
 import { base } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -49,30 +49,35 @@ const zoraAbi = [
 const CONTRACT_ADDRESS = "0x0000000002ba96c69b95e32caab8fc38bab8b3f8";
 
 function AirdropChecker() {
-  const [inputAddress, setInputAddress] = useState("");
-  const [checkingAddress, setCheckingAddress] = useState("");
+  const [inputAddresses, setInputAddresses] = useState("");
+  const [checkingAddresses, setCheckingAddresses] = useState([]);
   const [showAds, setShowAds] = useState(true);
 
-  // Read contract data
-  const { data, isError, isLoading, refetch } = useReadContract({
+  // Prepare contract read configs for each address
+  const contractConfigs = checkingAddresses.map((addr) => ({
     address: CONTRACT_ADDRESS,
     abi: zoraAbi,
     functionName: "accountClaim",
-    args: [checkingAddress.toLowerCase()],
+    args: [addr.toLowerCase()],
+  }));
+
+  // Batch read contract data
+  const { data, isError, isLoading, refetch } = useReadContracts({
+    contracts: contractConfigs,
     query: {
       refetchOnWindowFocus: false,
       refetchOnMount: false,
-      enabled: Boolean(checkingAddress),
+      enabled: checkingAddresses.length > 0,
     },
   });
 
-  console.log(!!checkingAddress);
-
   const handleCheckAirdrop = () => {
-    if (inputAddress) {
-      setCheckingAddress(inputAddress);
-      refetch();
-    }
+    const addresses = inputAddresses
+      .split("\n")
+      .map((a) => a.trim())
+      .filter((a) => a.length > 0);
+    setCheckingAddresses(addresses);
+    refetch();
   };
 
   const formatEth = (value) => {
@@ -107,15 +112,15 @@ function AirdropChecker() {
         <div className="space-y-4">
           <div className="space-y-2">
             <label className="text-sm text-gray-400 block">
-              Enter your address:
+              Enter addresses (one per line):
             </label>
             <div className="flex space-x-2">
-              <input
-                type="text"
-                placeholder="0x..."
-                value={inputAddress}
-                onChange={(e) => setInputAddress(e.target.value)}
-                className="flex-1 bg-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+              <textarea
+                placeholder={`0x...\n0x...\n0x...`}
+                value={inputAddresses}
+                onChange={(e) => setInputAddresses(e.target.value)}
+                className="flex-1 bg-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 min-h-[80px]"
+                rows={4}
               />
               <button
                 onClick={handleCheckAirdrop}
@@ -141,16 +146,48 @@ function AirdropChecker() {
             </div>
           )}
 
-          {data && (
-            <div className="bg-gray-700 rounded-md p-4 space-y-3">
-              <h3 className="text-lg font-medium">Airdrop Status</h3>
-              <div className="grid grid-cols-2 gap-2 text-sm">
-                <div className="text-gray-400">Address:</div>
-                <div className="font-mono truncate">{checkingAddress}</div>
-
-                <div className="text-gray-400">Allocation:</div>
-                <div className="font-medium">
-                  {data?.allocation ? formatEth(data.allocation) : "0"} ZORA
+          {data && Array.isArray(data) && data.length > 0 && (
+            <div>
+              <h3 className="text-lg font-medium text-center mt-4">
+                Total Allocation
+              </h3>
+              <p className="text-center text-purple-300 font-bold text-xl mb-4">
+                {formatEth(
+                  data.reduce(
+                    (sum, d) =>
+                      sum +
+                      (d?.result?.allocation ? Number(d.result.allocation) : 0),
+                    0
+                  )
+                )}{" "}
+                ZORA
+              </p>
+              <div className="bg-gray-700 rounded-md p-4 space-y-3">
+                <h3 className="text-lg font-medium">Airdrop Status</h3>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full text-sm">
+                    <thead>
+                      <tr className="text-gray-400">
+                        <th className="px-2 py-1 text-left">Address</th>
+                        <th className="px-2 py-1 text-left">Allocation</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {checkingAddresses.map((addr, i) => (
+                        <tr key={addr} className="border-t border-gray-600">
+                          <td className="font-mono truncate px-2 py-1 max-w-[180px]">
+                            {addr}
+                          </td>
+                          <td className="px-2 py-1">
+                            {data[i]?.result?.allocation
+                              ? formatEth(data[i].result.allocation)
+                              : "0"}{" "}
+                            ZORA
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
