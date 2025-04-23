@@ -80,14 +80,14 @@ function AirdropChecker() {
   };
 
   return (
-    <div className="min-h-screen w-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen w-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4 md:p-48">
       <div className="w-full bg-gray-800 rounded-lg shadow-lg p-6 space-y-6">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-purple-400 mb-2">
             Zora Unofficial Airdrop Checker
           </h1>
           <p className="text-gray-400">
-            Check if you're eligible for the Zora token airdrop
+            Check if you're eligible for the Zora token airdrop. No need to connect your wallet.
           </p>
         </div>
         <div className="space-y-4">
