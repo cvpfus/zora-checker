@@ -202,7 +202,7 @@ function AirdropChecker() {
           </div>
 
           {showAds && (
-            <>
+            <div className="flex flex-col gap-4 lg:flex-row">
               <a
                 href="https://edustreamr.xyz"
                 target="_blank"
@@ -213,11 +213,6 @@ function AirdropChecker() {
                   EduStreamr
                 </span>
                 <span className="text-yellow-200 text-sm block mb-1">
-                  <div>
-                    A decentralized tipping platform for streamers that offers
-                    instant payouts and super low fees, all powered by
-                    blockchain. Currently live on the <b>EDU Chain Testnet.</b>
-                  </div>
                   <div>
                     EduStreamr is currently participating in the{" "}
                     <b>Open Campus Incubator</b>. We are looking for beta
@@ -248,7 +243,7 @@ function AirdropChecker() {
                   producthunt.com/products/edustreamr
                 </span>
               </a>
-            </>
+            </div>
           )}
 
           <footer className="w-full text-center mt-8 text-sm text-gray-500">
