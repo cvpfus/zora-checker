@@ -169,11 +169,15 @@ function AirdropChecker() {
                 EduStreamr
               </span>
               <span className="text-yellow-200 text-sm block mb-1">
-                A decentralized tipping platform for streamers that offers
-                instant payouts and super low fees, all powered by blockchain.
-                EduStreamr is currently participating in the Open Campus
-                Incubator. We are looking for beta testers to try our platform
-                and give us feedback.
+                <div>
+                  A decentralized tipping platform for streamers that offers
+                  instant payouts and super low fees, all powered by blockchain.
+                </div>
+                <div>
+                  EduStreamr is currently participating in the Open Campus
+                  Incubator. We are looking for beta testers to try our platform
+                  and give us feedback.
+                </div>
               </span>
               <span className="text-yellow-300 underline text-xs">
                 edustreamr.xyz
